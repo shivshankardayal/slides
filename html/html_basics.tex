@@ -1,0 +1,32 @@
+\documentclass[aspectratio=1610]{beamer}
+\usepackage{tikz, xcolor, amsmath, minted}
+\definecolor{webgreen}{rgb}{0,.3,0}
+\color{webgreen}
+\setbeamercolor{structure}{fg=webgreen} 
+\usetheme{Warsaw}
+\begin{document}
+\begin{frame}
+\title{HTML Basics}
+\author{Shiv S. Dayal}
+\titlepage
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Basics}
+Six levels of headings \texttt{h1} through \texttt{h6}.
+\begin{minted}{html}
+<!DOCTYPE html>
+<html>
+<body>
+<h1>An h1 Heading</h1>
+<h2>An h2 Heading</h2>
+<h3>An h3 Heading</h3>
+<h4>An h4 Heading</h4>
+<h5>An h5 Heading</h5>
+<h6>An h6 Heading</h6>
+</body>
+</html>
+\end{minted}
+\end{frame}
+
+\end{document}
