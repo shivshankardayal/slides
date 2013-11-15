@@ -1,0 +1,109 @@
+\documentclass[aspectratio=1610]{beamer}
+\usepackage{tikz, xcolor, amsmath}
+\definecolor{webgreen}{rgb}{.4,.7,.4}
+\color{webgreen}
+\setbeamercolor{structure}{fg=webgreen} 
+\usetheme{Warsaw}
+\begin{document}
+\begin{frame}
+\title{Number System}
+\author{Shiv S. Dayal}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Definitions}
+Following is from \url{http://en.wikipedia.org/wiki/Numeral\_system}
+
+A numeral system (or system of numeration) is a writing system for expressing 
+numbers, that is, a mathematical notation for representing numbers of a given 
+set, using digits or other symbols in a consistent manner. It can be seen as the 
+context that allows the symbols ``11'' to be interpreted as the binary symbol 
+for three, the decimal symbol for eleven, or a symbol for other numbers in 
+different bases.
+
+Ideally, a numeral system will:
+\begin{enumerate}
+\item Represent a useful set of numbers (e.g. all integers, or rational numbers)
+\item Give every number represented a unique representation (or at least a 
+standard representation)
+\item Reflect the algebraic and arithmetic structure of the numbers.
+\end{enumerate}
+
+In our day-to-day use we use decimal number system while computers use binary. 
+Then we can have complex numbers which we will deal with later and then we can 
+have p-adic numbers which is out of scope for this book.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Definitions}
+\begin{enumerate}
+ \item We use decimal number system which is a positional number system with 
+base 10.
+ \item It is made up of real numbers set which is denoted by $\mathbf{R}$.
+ \item Real numbers consist of rational numbers and irrational numbers.
+ \item Rational numbers consist of fractions, integers and zero denoted by 
+$\mathbf{Q}$.
+ \item Rational numbers are like $\frac{a}{b}$ where $a$ and $b$ are both 
+integers and also $b\ne 0$.
+ \item Integers are numbers like -3, -2, -1, 0, 1, 2, 3 and is denoted by set 
+$\mathbf{I} \text{ or } \mathbf{Z}$.
+\item Integers can be then further subdivided into positive and negative 
+integers. 0 is neither positive not negative but is non-positive and 
+non-negative and is considered an integer.
+\item Positive integers are also called natural numbers and is denoted by set 
+$\mathbf{N}$.
+\end{enumerate}
+\begin{figure}
+\begin{center}
+\caption{Number axis}
+\begin{tikzpicture}
+\draw (0,0) -- (7,0);
+\draw (0,-0.2) -- (0,0.2);
+\draw (7,-0.2) -- (7,0.2);
+\draw (3.5,-0.2) -- (3.5,0.2);
+\draw (0.4, 0.2) node {$-\infty$};
+\draw (3.75, 0.2) node {$0$};
+\draw (6.6, 0.2) node {$+\infty$};
+\end{tikzpicture}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Definitions}
+\begin{enumerate}
+ \item Decimal form of rational number may not terminate. For example 
+$\frac{5}{7}$ does not terminate but $\frac{1}{4}$ does.
+ \item For standard form of rational number numerator and denominator have no 
+factor common other than one and $b>0$. For example, $\frac{2}{4}$ is not in 
+standard for but $\frac{1}{2}$ is in standard form.
+\item While rational numbers can be written as a ratio an irrational number 
+cannot be written as ratio for example $\pi \text{ or } e$.
+\item Decimal form of rational number is neither terminating nor recurring i.e. 
+we can say that it cannot be represented by a ratio. For example Ramanujan's 
+famous formula for $\pi$ is
+\begin{equation}
+\frac{1}{\pi} = \frac{2\sqrt{2}}{9801} \sum^\infty_{k=0} 
+\frac{(4k)!(1103+26390k)}{(k!)^4 396^{4k}} 
+\end{equation}
+As you see series is till $\infty$ so it never terminates.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Representation as Sets}
+ \begin{enumerate}
+  \item Continuing we can say that N = \{1, 2, 3, 4, 5, ...\}
+  \item I or Z = \{..., -3, -2, -1, 0, 1, 2, 3, ...\}
+  \item $Q = \{\frac{a}{b}; a, b\in Z \text{ and } b \ne 0\}$
+  \item $\in$ is the symbol used to denote that an element is \textit{in} some 
+set.
+  \item Clearly, $N\subset Z\subset Q\subset R$ where $\subset$ is the symbol 
+for subset.
+\end{enumerate}
+
+\end{frame}
+
+\end{document}

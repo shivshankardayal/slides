@@ -1,0 +1,63 @@
+\documentclass[aspectratio=1610]{beamer}
+\usepackage{tikz, xcolor, amsmath, minted}
+\definecolor{webgreen}{rgb}{.4,.7,.4}
+\color{webgreen}
+\setbeamercolor{structure}{fg=webgreen} 
+\usetheme{Warsaw}
+\begin{document}
+\begin{frame}
+\title{HTML Introduction}
+\author{Shi S. Dayal}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction}
+HTML stands for \textbf{HyperText Markup Language}. HTML was initially
+conceived and proposed by \textit{Tim Berners Lee}. At present world wide web
+consortium is reposnsible body for HTML. Current specification work is going on
+for HTML5. An HTML document describes content and how it will be presented.
+It contsists of tags which are enclosed within angular brackets($<>$). Within the
+tags content for the document is present.
+
+\begin{enumerate}
+\item Most of the tags come in pairs i.e. \texttt{<tag>content</tag>}.
+
+\item HTML is typically used in conjunction with CSS and Javascript for better
+looking user interfaces which provide more interactive and pleasant
+interfaces. 
+
+\item HTML pages are also called web pages and typically rendered by browsers.
+
+\item Since HTML5 is going to be future we will discuss only HTML5 and not older
+versions.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{A Sample HTML Document}
+\begin{minted}{html}
+<!DOCTYPE html>
+<html>
+<body>
+<h1>A Heading</h1>
+<p>A paragraph.</p>
+</body>
+</html>
+\end{minted}
+\begin{enumerate}
+\item \texttt{<!DOCTYPE html>} is called the doctype declaration which helps the
+browser identify the type of HTML document it is dealing with.
+
+\item \texttt{<html></html>} is the root node of document.
+
+\item \texttt{<body></body>} is the tag which contains visible content of the
+  page.
+\item \texttt{<h1></h1>} is one of the six headings page.
+\item \texttt{<p></p>} is describes a paragraph.
+\item The type of tag dectates how it will be rendered even when there is no
+  CSS. Browser supplies a default stylesheet.
+\end{enumerate}
+\end{frame}
+
+\end{document}
