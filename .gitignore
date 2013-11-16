@@ -1,0 +1,6 @@
+*
+!.gitignore
+!algebra
+!algebra/*.tex
+!html/
+!html/*.tex
