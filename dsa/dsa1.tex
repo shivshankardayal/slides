@@ -1,0 +1,71 @@
+\documentclass[aspectratio=1610]{beamer}
+\usepackage{tikz, xcolor, amsmath}
+\definecolor{webgreen}{rgb}{.3, .7, .3}
+\color{webgreen}
+%\setbeamercolor{structure}{fg=webgreen} 
+%\color{webgreen}
+\begin{document}
+\begin{frame}
+\title{Data Structures and Algorithms}
+\subtitle{Notations for algorithm complexity}
+\author{Shiv S. Dayal}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction}
+\begin{itemize}
+\item Big $O, \Omega, \text{ and } \Theta$ notations are widely used in analysis of
+algorithms.
+
+\item The symbol $O$ was first introduced by number theorist Paul Bachmann in 1894,
+in the second volume of his book Analytische Zahlentheorie (``analytic number
+theory'').
+
+\item The number theorist Edmund Landau adopted it, and was thus inspired to
+introduce in 1909 the notation $o$; hence both are now called Landau symbols.
+
+\item The big O was popularized in computer science by Donald Knuth, who
+re-introduced the related Omega and Theta notations.Knuth also noted that
+the Omega notation had been introduced by Hardy and Littlewood under a
+different meaning ``$\ne o$'' (i.e. ``is not an $o$ of'').
+\item Let us say we want to know about $O(f(n))$ where $n\in I.$
+\item $O(f(n))$ means precisely this: There are positive constants $M$ and
+$n_0$ such that the number $x_n$ nrepresented by $O(f(n))$ satisfies the
+condition $|x_n| \le M|f(n)|$, for all integers $n > n_0$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item Now this big-$O$ notation is also called asymptotic notation because
+it gives an upper bound on the function.
+\item Consider a function $f(n) = 2n + 3$
+\item Then we can say that $O(f(n)) = 5n$ for $n>1$. Even $O(f(n))=3n$ for
+$n>3$.
+\item We can also say $O(f(n)) = n^2$ but the statement is less strong
+compared to previous one.
+\item The key point is for some value $n>n_0, O(f(n))$ must be greater than
+$f(n)$ and then it should never become smaller after that, speaking plainly.
+Therefore, it is the upper bound.
+\item Now say $O(f(n))=3n$ for our case then we write it as $O(n)$.
+\item As $O$-notation gives upper bound similarly $\Omega$-notation gives
+lower bound.
+\item $g(n)=\Omega (f(n))$ means there exists two constants $L$ and $n_0$ such
+that $g(n)\ge L|f(n)| \text{ for all } n>n_0$.
+\item If we want to write exact order of growth without being accurate
+about constant factors $L$ and $M$ then we use $\Theta$-notation.
+\item $g(n)=\Theta (f(n)) \Leftrightarrow g(n)=O(f(n)) \text { and } g(n)=\Omega(f(n))$
+implying $\Theta$-notation gives both upper and lower bounds.
+\item In computer science for algorithm analysis we are almost always worried
+about big-$O$ complexity.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Some useful plots}
+\begin{center}
+\includegraphics[scale=0.2]{functions_plot.png}
+\end{center}
+\end{frame}
+\end{document}

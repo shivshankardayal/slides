@@ -1,0 +1,50 @@
+\documentclass[aspectratio=1610]{beamer}
+\usepackage{tikz, xcolor, amsmath}
+\definecolor{webgreen}{rgb}{.3, .7, .3}
+\color{webgreen}
+%\setbeamercolor{structure}{fg=webgreen} 
+%\color{webgreen}
+\begin{document}
+\begin{frame}
+\title{Various Infinite Series}
+\subtitle{Basics for math.h funcitons}
+\author{Shiv S. Dayal}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Various Infinite Series}
+\begin{itemize}
+\item We can represent trigonometric, lograthmic and exponential functions as
+infinite expansions and then compute up to our desired precision.
+\item The precision in C is fixed to float or double which may not be what we 
+exactly want. So we will use GMP which is GNU's multiple precision arithmetic
+library.
+\item Read about GMP at \url{http://gmplib.org/}
+\item First we will use only C then we will see examples using GMP.
+\item To refresh the memory some expansions are given below:
+\item Logrithm of $x$ with base $e$ or log natural of $|x|\le 1$ is given as
+$ln(x)=log_e(x)=(x-1)-\frac{(x-1)^2}{2}+\frac{(x-1)^3}{3}-\frac{(x-1)^4}{4}+\frac{(x-1)^5}{5} ...$
+\item $e^x$ is given by expansion as $e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+
+\frac{x^4}{4!}+ ....$
+\item Sine and Cosine are given as $cos(x)=1-\frac{x^2}{2}+\frac{x^4}{4!}
+-\frac{x^6}{6!} ...$
+$sin(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!} ...$
+\item We will start with \textit{lnx} and proceed so that we can compute
+fractional powers as you will see.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{More on log series}
+The series which we will use is for $|x|\ge 1$:
+
+$ln\frac{x}{x-1} = \frac{1}{x} + \frac{1}{2x^2} + \frac{1}{3x^3} + ...$
+so to compute for any natural number $y$ we have to substitute $x=\frac{y}{y-1}$
+
+Let $lnx=y$ then $x=e^y.$ So, $x$ cannot be a real no. which is negative even if
+$y$ is negative. Therefore, our input will always be positive and it is a
+math domain error if it is negative. 
+\end{frame}
+
+\end{document}
