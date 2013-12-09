@@ -1,0 +1,28 @@
+\documentclass[aspectratio=1610]{beamer}
+\usepackage{tikz, xcolor, amsmath}
+\definecolor{webgreen}{rgb}{.3, .7, .3}
+\color{webgreen}
+%\setbeamercolor{structure}{fg=webgreen} 
+%\color{webgreen}
+\begin{document}
+\begin{frame}
+\title{Exponentiation of arbitrary powers}
+\subtitle{Basics for implementing math.h functions}
+\author{Shiv S. Dayal}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Objective}
+\begin{itemize}
+\item Our objective is to compute $x^y \text{ where } x, y \in \mathbf{R}
+\text{ and } |y|<1$
+where $\mathbf{R}$ is the set of real-numbers.
+\item We have already computed integral powers of $x$ using exponentiation
+by squaring previously.
+\item Now we consider fractional $|y|<1$. Negative values of $y$ does not
+matter because $x^{-y}$ can always be written as $\frac{1}{x^y}$.
+\end{itemize}
+\end{frame}
+
+\end{document}
