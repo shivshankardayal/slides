@@ -139,6 +139,106 @@ Let us say cost for operations of line no. 6, 8, 9, 11, 12 and 13 are
 $c_1, c_2, c_3, c_4, c_5 \text{ and } c_6$. Then total cost is
 $\sum_{i=1}^6 c_i$ which is constant, say $K$, so $K$ is $MO(1)$ where
 for any $M>K$ the order $O(1)$ will provide an upper bound.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Insertion in between two nodes}
+\textbf{Insertion at some position}
+If position is 0 then we can simply call \texttt{add\_at\_beg} described
+earlier. If not then clearly list is not empty. So we need to move forward
+in linked list using \texttt{head=head->next;} till we reach our desired
+position or \texttt{head->next} becomes \texttt{NULL}.
+
+If we reach our position we allocate memory for a temporary node and
+manipulate pointers to put this new node in between.
+
+Supposed we do it for position 1 with starting node being at 0. Then
+considering our previous linked list. Let us say we put data x in this
+new node.
+\begin{center}
+\begin{tikzpicture}
+\draw (-.5,6.5) rectangle (.5,7.5);
+\draw[->, thick] (-1.5,7) -- (-0.5,7);
+\draw (0,7) node{data};
+\draw[->, thick] (.5,7) -- (1.5,7);
+\draw (2,7) node{NULL};
+\draw (-2.5,6.5) rectangle (-1.5,7.5);
+\draw (-2,7) node{data1};
+\draw[->, thick] (-3.5,7) -- (-2.5,7);
+\draw (-4.2,7) node {head};
+\draw (-2,5) rectangle (-1,6);
+\draw (-1.5,5.5) node{x};
+\draw[->, thick] (-1,6) -- (-.5, 6.8);
+\end{tikzpicture}
+\end{center}
+Now we simply point \texttt{data1->next} which is actually
+\texttt{head} because we did \texttt{head=head->next;} to arrive
+here. We say \texttt{head->next=temp;} where \texttt{temp} is
+this allocated node.
+\end{frame}
+
+\begin{frame}[fragile]
+So now our list would look like following:
+\begin{center}
+\begin{tikzpicture}
+\draw (-.5,6.5) rectangle (.5,7.5);
+\draw[->, thick] (-1.5,7) -- (-0.5,7);
+\draw (0,7) node{x};
+\draw[->, thick] (.5,7) -- (1.5,7);
+\draw (4,7) node{NULL};
+\draw (-2.5,6.5) rectangle (-1.5,7.5);
+\draw (-2,7) node{data1};
+\draw[->, thick] (-3.5,7) -- (-2.5,7);
+\draw (-4.2,7) node {head};
+\draw (1.5,6.5) rectangle (2.5,7.5);
+\draw (2,7) node{data};
+\draw[->, thick] (-3.5,7) -- (-2.5,7);
+\draw[->, thick] (2.5,7) -- (3.5,7);
+\end{tikzpicture}
+\end{center}
+\begin{minted}{c}
+void add_in_bet(ll* head)
+{
+  ll *temp;
+  int i = 0, j = 0;
+  int position = 0;
+
+  temp = (ll*)malloc(sizeof(ll));
+
+  printf("Enter position at which the number is to be added.\n");
+  scanf("%d", &position);
+
+  if(position == 0)
+    return add_at_beg(&head);
+
+  printf("Enter an integer to be added in between.\n");
+  scanf("%d", &i);
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\begin{minted}{c}
+  while(head->next != NULL) {
+    ++j;
+    if(j == position) {
+      temp->next = head->next;
+      head->next = temp;
+      temp->data = i;
+      break;
+    }
+    head = head->next;
+  }
+}
+\end{minted}
+
+\vspace*{0.5cm}
+\textbf{Complexity analysis}
+\vspace*{0.5cm}
+
+Most of cost of operations is constant what depends on variable position
+is \texttt{++j} and \texttt{head=head->next;}. Now suppose there are
+\texttt{n} elements then worst case is $O(n)$ because we can always have a
+large constant $M$.
 \end{frame}
 \end{document}
 
