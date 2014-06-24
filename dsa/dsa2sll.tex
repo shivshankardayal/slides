@@ -240,5 +240,133 @@ is \texttt{++j} and \texttt{head=head->next;}. Now suppose there are
 \texttt{n} elements then worst case is $O(n)$ because we can always have a
 large constant $M$.
 \end{frame}
-\end{document}
 
+\begin{frame}[fragile]
+\frametitle{Appending at the end}
+Appneding at the end is simple enough that we do not even need a diagram.
+Consider the following code:
+\begin{minted}{c}
+void append(ll** head)
+{
+  ll* temp;
+  int i;
+
+  printf("Enter the number which is to be appended to the list.\n");
+  scanf("%d", &i);
+
+  temp = (ll*)malloc(sizeof(ll));
+  temp->data = i;
+  temp->next = NULL;
+
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\begin{minted}{c}
+  // if there are no nodes temp can act as head
+  if(count(*head) == 0) {
+    *head=temp;
+    return;
+  }
+  
+  // traverse till we hit the end of list
+  while((*head)->next != NULL) {
+    *head = (*head) ->next;
+  }
+
+  // head->next which was NULL becomes temp i.e. last node is temp
+  // and temp->next is NULL
+  (*head)->next = temp;
+}
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Counting no. of nodes in linked list}
+We check if \texttt{head} is \texttt{NULL} or not. Then we just move forward
+till we find \texttt{head->next} to be \texttt{NULL}. Rememeber to initialize
+counter with 1.
+\begin{minted}{c}
+int count(ll* head)
+{
+  int count = 1;
+
+  if(head == NULL) {
+    printf("The no. of elements in linked list is %d.\n", 0);
+    return 0;
+  }
+
+  while(head->next != NULL) {
+    count++;
+    head = head->next;
+  }
+
+  printf("The no. of elements in linked list is %d.\n", count);
+  return count;
+}
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Searching a node in linked list}
+\begin{minted}{c}
+void search(ll* head)
+{
+  int i=0, position=1;
+
+  printf("Enter the number to be searched.");
+  scanf("%d", &i);
+
+  while(head != NULL) {
+    if(head->data == i) {
+      printf("%d is found at position %dth\n", i, position);
+      return;
+    }
+
+    head = head->next;
+    position++;
+  }
+  printf("%d was not found in linked list.\n", i);
+}
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Deleting a node}
+\begin{minted}{c}
+void delete(ll** head)
+{
+  ll *temp, *q;
+  int i;
+
+  temp = *head;
+
+  if(*head == NULL) {
+    printf("There is no element to be deleted.\n");
+    return;
+  }
+
+  printf("Enter the value of data to be deleted.\n");
+  scanf("%d", &i);
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{minted}{c}
+  if(temp->data == i) {
+    *head = temp->next;
+    free(temp);
+  } else {
+      while(temp->next != NULL) {
+        if(temp->data == i) {
+          q->next = temp->next;
+          free(temp);
+          break;
+        }
+        q = temp;
+        temp = temp->next;
+      }
+  }
+}
+\end{minted}
+\end{frame}
+\end{document}
